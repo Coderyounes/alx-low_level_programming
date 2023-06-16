@@ -14,10 +14,12 @@ int main(void)
 
 	for (i = 0; i < 10; i++)
 	{
+		if (i != 0)
+		{
+			putchar(44);
+			putchar(32);
+		}
 		putchar(i + '0');
-		if (i != 9)
-		putchar(',');
-		putchar(' ');
 	}
 	putchar('\n');
 	return (0);
