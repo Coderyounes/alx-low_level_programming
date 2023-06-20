@@ -9,14 +9,12 @@
 
 int main(void)
 {
-	int i;
+	unsigned int i;
 	char text[] = "_putchar";
 
-	for (i = 0; i <= 8; i++)
-	{
-		putchar(text[i]);
-	}
-	putchar('\n');
+	for (i = 0; i <= sizeof(text); i++)
+	_putchar(text[i]);
+	_putchar('\n');
 
 	return (0);
 }
