@@ -9,10 +9,10 @@
 
 int main(void)
 {
-	unsigned int i;
+	int i;
 	char text[] = "_putchar";
 
-	for (i = 0; i <= sizeof(text); i++)
+	for (i = 0; i <= 8; i++)
 	{
 		putchar(text[i]);
 	}
