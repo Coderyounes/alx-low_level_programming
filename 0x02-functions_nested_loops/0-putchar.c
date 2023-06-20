@@ -1,6 +1,11 @@
 #include <stdio.h>
 
 /**
+ * main - Entry Point
+ *
+ * Description: Print array of charachters using putchar & Loop
+ *
+ * Return: 0 Always Success
  */
 
 int main(void)
