@@ -21,7 +21,7 @@ int main(void)
 	for (i = 2; i < 50; i++)
 	{
 		nums[i] = nums[i - 1] + nums[i - 2];
-		printf("%d", nums[i]0);
+		printf("%d", nums[i]);
 
 		if (i != 49)
 		{
