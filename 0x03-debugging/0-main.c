@@ -1,9 +1,6 @@
 #include "main.h"
-
 /**
  * main - EntryPoint
- *
- * Description: Code  to test positive or negative function
  *
  * Return: 0 Always Success
  */
