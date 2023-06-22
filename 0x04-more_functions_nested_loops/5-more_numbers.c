@@ -12,7 +12,10 @@
 void more_numbers(void)
 {
 	int i;
+	int line;
 
+	for (line = 0; line <= 9; line++)
+	{
 	for (i = 0; i <= 14; i++)
 	{
 		if (i >= 10)
@@ -22,4 +25,5 @@ void more_numbers(void)
 		_putchar('0' + i % 10);
 	}
 	_putchar('\n');
+	}
 }
