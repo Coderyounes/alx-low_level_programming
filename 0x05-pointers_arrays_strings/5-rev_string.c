@@ -1,0 +1,25 @@
+#include "main.h"
+
+/**
+ * rev_string - function name
+ *
+ * Description: reverse string  via swapping
+ *
+ * @s: string to reverse
+ */
+
+void rev_string(char *s)
+{
+	int i, l;
+	char rev;
+
+	for (l = 0; s[l] != '\0'; l++)
+		;
+
+	for (i = 0; i < l / 2; i++)
+	{
+		rev = s[i];
+		s[i] = s[l - 1 - i];
+		s[l - 1 - i] = rev;
+	}
+}
