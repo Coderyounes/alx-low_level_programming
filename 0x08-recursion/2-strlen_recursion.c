@@ -7,18 +7,14 @@
  *
  * @s: pointer to string
  *
- * Return: i the length value
+ * Return: 1 for characters & 0 for null
  */
 
 int _strlen_recursion(char *s)
 {
-	static int i;
-
 	if (*s == '\0')
 	{
-		return (i);
+		return (0);
 	}
-	else
-		i++;
-	return (_strlen_recursion(s + 1));
+	return (1 + _strlen_recursion(s + 1));
 }
