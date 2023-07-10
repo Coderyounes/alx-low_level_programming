@@ -1,55 +1,45 @@
-#include "main.h"
+#include <stdlib.h>
 
 /**
- * str_concat - function name
+ * str_concat - a function that concatenates two strings.
  *
- * Description: allocate memory & concat two strings
+ * @s1: input to string 1
+ * @s2: input to string 2
  *
- * @s1: pointer to first string
- *
- * @s2: pointer to second string
- *
- * Return: Null if the operation fail,otherwise the new string
- */
+ * Return: NULL on faliure
+*/
 
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int i, j, k, e;
-	char *string;
+	int a = 0, b = 0;
+	int i, j;
+	char *s;
 
-	if (!s1)
-	{
+	if (s1 == NULL)
 		s1 = "";
-	}
-	else if (!s2)
-	{
+	if (s2 == NULL)
 		s2 = "";
-	}
 
-	while (s1[i] != '\0')
-		i++;
+	while (s1[a] != '\0')
+		a++;
+	while (s2[b] != '\0')
+		b++;
 
-	while (s2[j] != '\0')
-		j++;
+	s = malloc((a * sizeof(char)) + ((b + 1) * sizeof(char)));
 
-	string = malloc((i * sizeof(char)) + ((j + 1) * sizeof(char)));
-
-	if (string == NULL)
-	{
+	if (s == NULL)
 		return (NULL);
-	}
 
-	for (k = 0; s1[k] != '\0'; k++)
-		string[k] = s1[k];
+	for (i = 0; s1[i] != '\0'; i++)
+		s[i] = s1[i];
 
-	for (e = 0; s2[e] != '\0'; e++)
+	for (j = 0; s2[j] != '\0'; j++)
 	{
-		string[k] = s2[e];
-		k++;
+		s[i] = s2[j];
+		i++;
 	}
 
-	string[k] = '\0';
+	s[i] = '\0';
 
-	return (string);
-
+	return (s);
 }
