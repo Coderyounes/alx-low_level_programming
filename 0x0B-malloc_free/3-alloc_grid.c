@@ -1,4 +1,4 @@
-#include "main"
+#include "main.h"
 
 /**
  * alloc_grid - function name
