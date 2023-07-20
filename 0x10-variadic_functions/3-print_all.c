@@ -43,8 +43,7 @@ void p_str(char *s, char *separator)
 {
 	if (!s)
 		s = ("(nil)");
-
-		printf("%s%s", separator, s);
+	printf("%s%s", separator, s);
 }
 
 
