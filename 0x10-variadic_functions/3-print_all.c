@@ -41,14 +41,10 @@ void p_float(double f, char *separator)
 
 void p_str(char *s, char *separator)
 {
-	if (s == NULL)
-	{
-		printf("(nil)");
-	}
-	else
-	{
+	if (!s)
+		s = ("(nil)");
+
 		printf("%s%s", separator, s);
-	}
 }
 
 
