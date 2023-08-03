@@ -14,12 +14,12 @@ int set_bit(unsigned long int *n, unsigned int index)
 {
 	int bits;
 
-	if (index >= 32)
+	if (index > 32)
 	{
 		return (-1);
 	}
 
-	bits = *n |= (1 << index);
+	*n |= (1 << index);
 
-	return (bits);
+	return (1);
 }
