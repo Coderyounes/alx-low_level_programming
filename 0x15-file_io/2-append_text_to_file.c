@@ -1,35 +1,34 @@
 #include "main.h"
 
 /**
- * append_text_to_file - function to append a text to a existing file
+ * append_text_to_file - a funcion append text to a file
  *
- * @filename: pointer to file
+ * @filename: pointer to a file
+ * @text_content: text content to add to file
  *
- * @text_content: pointer to text content
- *
- * Return: -1 if fail , 1 on Success
- */
-
+ * Return: 1 on success, -1 on failure
+*/
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int file, i, w_check;
+	int file, w_check, i = 0;
 
 	if (filename == NULL)
 		return (-1);
 
-	file = open(filename, O_WRONLY | O_APPEND);
-		if (file < 0)
-			return (-1);
+	file = open(filename, O_APPEND | O_WRONLY);
+	if (file == -1)
+		return (-1);
 
-	if (text_content != NULL)
+	if (text_content)
 	{
-		for (; text_content[i]; i++)
-			;
+		while (text_content[i] != '\0')
+			i++;
 
-		w_check = write(file, text_content, i);
-			if (w_check < 0)
-				return (-1);
+		w_check = write(file, text_content, words);
+		if (w_check == -1)
+			return (-1);
 	}
+
 	close(file);
 	return (1);
 }
