@@ -19,13 +19,13 @@ int main(int argc, char *argv[])
 
 	src_fd = open_source_file(argv[1]);
 	if (src_fd < 0)
-		exit(99);
+		exit(98);
 
 	dest_fd = open_dest_file(argv[2]);
 	if (dest_fd < 0)
 	{
 		close(src_fd);
-		exit(99);
+		exit(98);
 	}
 
 	if (copy_file(src_fd, dest_fd, argv) != 0)
