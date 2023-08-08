@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 	{
 		close(src_fd);
 		close(dest_fd);
-		exit(98);
+		exit(99);
 	}
 
 	close_src = close(src_fd);
