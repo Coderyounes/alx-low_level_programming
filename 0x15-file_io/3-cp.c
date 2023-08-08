@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 	if (dest_fd < 0)
 	{
 		close(src_fd);
-		exit(99);
+		exit(98);
 	}
 
 	if (copy_file(src_fd, dest_fd) != 0)
@@ -103,14 +103,14 @@ int copy_file(int src_fd, int dest_fd)
 	{
 		if (write(dest_fd, buffer, bytes_read) != bytes_read)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to file descriptor\n");
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest_fd);
 			return (-1);
 		}
 	}
 
 	if (bytes_read < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from source file descriptor\n");
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src_fd);
 		return (-1);
 	}
 
