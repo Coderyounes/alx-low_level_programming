@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	if (copy_file(src_fd, dest_fd) != 0)
+	if (copy_file(src_fd, dest_fd, argv) != 0)
 	{
 		close(src_fd);
 		close(dest_fd);
@@ -94,7 +94,7 @@ int open_dest_file(const char *filename)
  *
  * Return: 0 on Success , otherwise -1
  */
-int copy_file(int src_fd, int dest_fd)
+int copy_file(int src_fd, int dest_fd, char *argv[])
 {
 	char buffer[1024];
 	ssize_t bytes_read;
@@ -103,14 +103,14 @@ int copy_file(int src_fd, int dest_fd)
 	{
 		if (write(dest_fd, buffer, bytes_read) != bytes_read)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest_fd);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			return (-1);
 		}
 	}
 
 	if (bytes_read < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src_fd);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		return (-1);
 	}
 
