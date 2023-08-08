@@ -19,20 +19,20 @@ int main(int argc, char *argv[])
 
 	src_fd = open_source_file(argv[1]);
 	if (src_fd < 0)
-		exit(98);
+		exit(99);
 
 	dest_fd = open_dest_file(argv[2]);
 	if (dest_fd < 0)
 	{
 		close(src_fd);
-		exit(98);
+		exit(99);
 	}
 
 	if (copy_file(src_fd, dest_fd, argv) != 0)
 	{
 		close(src_fd);
 		close(dest_fd);
-		exit(99);
+		exit(98);
 	}
 
 	close_src = close(src_fd);
@@ -91,6 +91,8 @@ int open_dest_file(const char *filename)
  * @src_fd: source file
  *
  * @dest_fd: destination file
+ *
+ * @argv: pointer to argument vector
  *
  * Return: 0 on Success , otherwise -1
  */
