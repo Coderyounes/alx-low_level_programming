@@ -2,6 +2,10 @@
 
 
 /**
+ * free_node - function to free one node
+ * @node: node contain key/value pairs
+ * This is Helper function make the Code more
+ * readable
  */
 
 void free_node(hash_node_t *node)
@@ -15,6 +19,8 @@ void free_node(hash_node_t *node)
 }
 
 /**
+ * hash_table_delete - function to free hashtable
+ * @ht: hashtable to free
  */
 
 void hash_table_delete(hash_table_t *ht)
