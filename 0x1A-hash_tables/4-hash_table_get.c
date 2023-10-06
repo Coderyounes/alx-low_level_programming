@@ -12,6 +12,9 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	unsigned long int index, hash;
 	hash_node_t *temp;
 
+	if (ht == NULL)
+		return (NULL);
+
 	hash = key_index((const unsigned char *)key, ht->size);
 	index = hash % ht->size;
 
